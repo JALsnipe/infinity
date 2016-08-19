@@ -23,6 +23,7 @@
 
 #if !defined(__MACH__) && !defined(__APPLE__)
 #include<malloc.h>
+#include<curses.h>
 #endif
 
 //#include<bios.h>
