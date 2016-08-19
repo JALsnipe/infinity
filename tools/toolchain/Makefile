@@ -1,3 +1,8 @@
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Linux)
+	LDLIBS = -lcurses
+endif
+
 all: ../../bin/afzconv ../../bin/fixgb ../../bin/gfx2h ../../bin/inspage ../../bin/itemconv ../../bin/j2w ../../bin/pagesize ../../bin/pagify ../../bin/post ../../bin/proctext ../../bin/gbr2bin
 
 enemy.o: enemy.c
@@ -19,7 +24,8 @@ enemy.o: enemy.c
 	gcc -Wall -o ../../bin/itemconv itemconv.c
 
 ../../bin/j2w: j2w.c
-	gcc -Wall -o ../../bin/j2w j2w.c
+	echo "$(LDLIBS)"
+	gcc -Wall $(LDLIBS) -o ../../bin/j2w j2w.c
 
 ../../bin/pagesize: pagesize.c
 	gcc -Wall -o ../../bin/pagesize pagesize.c
