@@ -10,11 +10,12 @@ set PROJECT_ROOT=%~dp0\..
 
 set BUILDER=j:\sdk\gbz80-gb\2-1-5\bin
 set BIN=j:\bin
+set SCRIPTS=j:\scripts
 set MAKE=j:\build
 set RELEASE=j:\release
 set SOURCE=j:\source
 set RESOURCE=j:\resource
-set PATH=%PATH%;%BIN%;%BUILDER%
+set PATH=%PATH%;%BIN%;%BUILDER%;%SCRIPTS%
 
 if not exist %BIN% subst j: %PROJECT_ROOT%
 cd /d j:\
